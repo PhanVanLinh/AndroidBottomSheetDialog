@@ -7,8 +7,7 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.bottom_sheet_view.*
 import kotlinx.android.synthetic.main.content_main.*
 import android.support.design.widget.BottomSheetDialog
-
-
+import vn.linh.androidbottomsheetdialog.bottomsheetwithrecyclerview.BottomSheetRecyclerViewFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,9 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
-       val sheetBehavior = BottomSheetBehavior.from(bottom_sheet)
+        val sheetBehavior = BottomSheetBehavior.from(bottom_sheet)
         findViewById<Button>(R.id.btn_bottom_sheet).setOnClickListener {
             if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
                 sheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -38,9 +35,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_bottom_sheet_dialog_fragment).setOnClickListener {
-
             val bottomSheetFragment = BottomSheetFragment()
-            bottomSheetFragment.show(supportFragmentManager,"" )
+            bottomSheetFragment.show(supportFragmentManager, "")
+        }
+
+        findViewById<Button>(
+            R.id.btn_bottom_sheet_dialog_fragment_with_recyclerview).setOnClickListener {
+            val bottomSheetFragment = BottomSheetRecyclerViewFragment()
+            bottomSheetFragment.show(supportFragmentManager, "")
         }
     }
 }

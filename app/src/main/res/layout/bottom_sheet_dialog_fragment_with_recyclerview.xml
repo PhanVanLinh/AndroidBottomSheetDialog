@@ -13,10 +13,10 @@
         android:textSize="18sp"
         />
 
-    <ImageView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"
         />
 
 </LinearLayout>
