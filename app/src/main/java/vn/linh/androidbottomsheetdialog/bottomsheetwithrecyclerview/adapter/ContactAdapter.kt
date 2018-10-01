@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.item_contact.view.*
 import vn.linh.androidbottomsheetdialog.R
 
 class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
@@ -25,8 +26,8 @@ class ContactAdapter : RecyclerView.Adapter<ContactAdapter.ItemViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.itemView.text_name.text = contactItems!![position].name
     }
-
 
     class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
